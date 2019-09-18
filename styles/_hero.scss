@@ -1,0 +1,113 @@
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../assets/bg.jpeg");
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  .tagline {
+    h1 {
+      font-size: 3em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: $secondary-color;
+    }
+
+    p {
+      color: $light-color;
+      font-size: 2em;
+    }
+  }
+
+  .tooltip {
+    position: relative;
+    height: 100px;
+    width: 520px;
+
+    .icon {
+      font-size: 2em;
+      color: $main-color;
+      cursor: pointer;
+    }
+
+    .content {
+      background: rgba($color: #000000, $alpha: 0.5);
+      width: 540px;
+      height: 200px;
+      display: grid;
+      grid-template-columns: 25% 75%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      display: none;
+
+      border-radius: 10px;
+
+      img {
+        border-radius: 10px 0 0 10px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: top;
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px;
+
+        h3 {
+          color: $main-color;
+          font-size: 1.4em;
+        }
+
+        p {
+          color: $secondary-color;
+        }
+
+        .btn {
+          display: inline-block;
+          width: 40%;
+          text-decoration: none;
+          padding: 12px 0;
+          text-align: center;
+          border: 2px solid $main-color;
+          font-family: $title-font;
+          color: #fff;
+          text-transform: uppercase;
+          outline: none;
+
+          transition: all 0.2s;
+
+          &:hover {
+            background: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hero {
+    display: flex;
+    text-align: center;
+    background-position-x: 48%;
+
+    .tooltip {
+      display: none;
+    }
+
+    .tagline {
+      p {
+        margin-top: 70px;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+// general styles
+
+$title-font: "Oswald", sans-serif;
+$text-font: "Roboto", sans-serif;
+
+$main-color: #fc852a;
+$secondary-color: #f2bf91;
+$light-color: #c5c8d9;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $title-font;
+  font-weight: bold;
+}
+
+p,
+a {
+  font-family: $text-font;
+}
+
+// header
+
+@import './header';
+
+
+// hero section
+
+@import './hero';
+
+
+// tours section
+
+@import './tours';
+
+// features section
+
+@import './features';
+
+// contact section
+
+@import './contact';
+
+// footer
+
+@import './footer';
+
+// transitions
+
+@import './transitions';

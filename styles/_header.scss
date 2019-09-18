@@ -1,0 +1,130 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  z-index: 1000;
+
+  padding: 20px 0;
+
+  transition: all 0.2s;
+
+  &.scrolled {
+    background: rgba($color: #000000, $alpha: 0.5);
+    padding: 10px 0;
+  }
+
+  .brand {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-color;
+    font-family: $title-font;
+  }
+
+  #toggle-btn {
+    display: none;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .navbar {
+    list-style: none;
+
+    li {
+      display: inline-block;
+      padding: 0px 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $light-color;
+      font-size: 1.1em;
+      text-transform: uppercase;
+
+      transition: all 0.2s;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    &.scrolled {
+      padding: 20px;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 0;
+      right: -100px;
+      width: 0;
+      height: 100vh;
+      background: #000;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      padding: 60px 0;
+
+      transition: all 0.2s;
+
+      &.active {
+        width: 70%;
+        right: 0;
+      }
+
+      li {
+        display: block;
+      }
+
+      a {
+        font-size: 1.4em;
+        font-weight: bold;
+      }
+    }
+
+    .overlay {
+      display: block;
+      width: 0;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: rgba($color: #000000, $alpha: 0.5);
+
+      transition: all .20s;
+
+      &.active {
+        width: 100%;
+      }
+    }
+
+    #toggle-btn {
+      display: block;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 2em;
+      z-index: 9999;
+   
+  
+    }
+  }
+}
